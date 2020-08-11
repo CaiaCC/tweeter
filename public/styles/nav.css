@@ -1,0 +1,21 @@
+nav {
+	height: 120px;
+  width: 100%;
+	background-color: #4ecdc4;
+	color: #FFFFFF;
+  /* font-size: 24px; */
+	padding: 1.5em;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+}
+
+nav span {
+	font-family: 'Bungee', cursive;
+}
+
+/* FIXME:Try to put arrow icon below and ceter, but it doesn't work */
+.write-a-new-tweet {
+	align-self: center;
+}
