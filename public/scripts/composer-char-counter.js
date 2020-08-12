@@ -4,12 +4,12 @@ $(document).ready(() => {
 
 	$('#tweet-text').on('keyup', function() {
 		let length = $(this).val().length;
-		const output = $(this).parent().children(2).children(2);
-		
+		const char = $(this).parent().children().children()[1];
+		console.log(char)
 		if (length < 140) {
-			return output.text(length);
+			$(char).text(length);
 		} else {
-			output.text(140 - length).css('color', 'red');
+			$(char).text(140 - length).css('color', 'red');
 		}
 
 	})
