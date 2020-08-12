@@ -2,8 +2,7 @@ nav {
 	height: 120px;
   width: 100%;
 	background-color: #4ecdc4;
-	color: #FFFFFF;
-  /* font-size: 24px; */
+	color: #1A535C;
 	padding: 1.5em;
 	display: flex;
 	flex-direction: row;
@@ -15,7 +14,3 @@ nav span {
 	font-family: 'Bungee', cursive;
 }
 
-/* FIXME:Try to put arrow icon below and ceter, but it doesn't work */
-.write-a-new-tweet {
-	align-self: center;
-}
