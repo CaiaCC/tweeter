@@ -24,7 +24,7 @@
 
   <body>
     <!-- Top nav bar (fixed) -->
-    <nav>
+    <nav class="nav" id="fixed-nav">
       <div>
         <span>Caia's Tweeter</span>
       </div>
@@ -36,7 +36,7 @@
       </div>  
     </nav>
     <!--Header -->
-    <header>
+    <header class="top-header" >
       <div>
           <img src="/images/profile-hex.png"> 
       </div>
@@ -49,14 +49,40 @@
     <main class="container">
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
-        <form action="/tweets" method="POST">
+        <form id="tweet-form">
           <label for="tweet-text">What are you humming about?</label>
-          <textarea name="text" id="tweet-text" placeholder="type here"></textarea>
+          <textarea id="tweet-text" name="text" placeholder="Type your tweet here"></textarea>
           <div class="button-output">
             <button type="submit">Tweet</button>
             <output name="counter" class="counter" for="tweet-text">0</output>
           </div>
         </form>
+      </section>
+      <section id="tweets-container">
+        <article class="tweet">
+          <header>
+            <div class="tweet-name">
+              <img class="avatar" src="./images/ghost.png">
+              <p>name</p> 
+            </div>
+            <div class="hover-text">
+              <p>@hover</p>
+            </div> 
+          </header>
+          <div class="tweet-content">
+            <p>Tweet goes here...</p>
+          </div>
+          <footer>
+            <div>
+              <p>10 days ago</p>
+            </div>
+            <div>
+              <img class="icon" src="./images/ghost.png">
+              <img class="icon" src="./images/ghost.png">
+              <img class="icon" src="./images/ghost.png">
+            </div>
+          </footer>
+        </article>
       </section>
     </main>
   </body>

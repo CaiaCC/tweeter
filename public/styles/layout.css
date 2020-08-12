@@ -24,7 +24,8 @@ body {
   align-items: center;
 }
 
-.container {
+main {
+  margin: 1.5em;
   height: 400px;
   width: 90%;
   font-size: 24px;
@@ -32,12 +33,93 @@ body {
   color: #1A535C;
   display: flex;
   flex-direction: column;
-  align-items: stretch;
+  align-items: center;
+  /* justify-content: space-around; */
+}
+
+#tweets-container {
+  margin: 1em;
+	padding: .5em;
+	width: 100%;
+	background-color: #f4f1ec;
+	display: flex;
+	flex-direction: column;
+  align-items: center;
 }
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
 
+/* New tweet goes here. Includes a header, div(class: tweet-content, and footer)*/
+.tweet {
+  margin: 1em;
+	padding: .5em;
+	height: 250px;
+	width: 100%;
+	background-color: #f4f1ec;
+  color: #1A535C;
+	border: 2px solid #1A535C;
+	display: flex;
+	flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
 
+/* hover shadow effect*/
+.tweet:hover {
+	box-shadow: 3px 3px 3px rgb(80, 120, 121);
+}
 
+.tweet header {
+  /* padding: .5em; */
+  height: 60px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
 
+.tweet-name > img,
+.tweet-name > p {
+  display: inline;
+}
+
+.tweet-name {
+  padding: .5em;
+  align-self: flex-start;
+}
+
+.hover-text {
+  /* padding: .5em; */
+  visibility: hidden;
+  align-self: flex-end;
+  color: #226f7b9c;
+}
+
+.tweet:hover .hover-text {
+	visibility: visible;
+}
+
+.tweet-content {
+  width: 100%;
+  color:  #1A535C;
+  font-size: 18px;
+  border-bottom: 2px solid #1A535C;
+}
+
+#tweets-container footer {
+  /* padding: .5em; */
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 14px;
+}
+
+.avatar {
+  width: 2em;
+}
+
+.icon {
+  width: .8em;
+}

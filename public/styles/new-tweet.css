@@ -7,28 +7,32 @@
 	
 }
 
-textarea {
+/* Type tweet here */
+.new-tweet textarea {
 	margin-top: 5px;
+	height: 60px;
 	width: 100%;
 	background-color: #f4f1ec;
-	font-size: 14px;
+	font-size: 18px;
 	border: 0;
 	border-bottom: 2pt solid #1A535C;
 }
 
+/* container of button and the char output */
 .button-output {
 	display: flex;
-	flex-direction: row;
+	/* flex-direction: row; -->it is default */
 	justify-content: space-between;
 	font-family: 'Bungee', cursive;
-	font-size: 14px;
-	padding-top:  4px;
+	font-size: 16px;
+	padding-top: .5em;
 }
 
+/* button design */
 button {
 	background-color: #07a99e;
 	border: 0px;
 	color: #FFFFFF;
-	padding: 2px;
+	padding: .3em;
 }
 
