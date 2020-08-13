@@ -3,10 +3,16 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
+const escape = function(str) {
+  let div = document.createElement('div');
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+}
 
 const createTweetElement = function(tweet) {
   const user = tweet.user;
   const content = tweet.content.text;
+  const safeContent = escape(content);
   const timeStamp = tweet.created_at;
   const date = new Date(timeStamp);
   const day = date.toLocaleDateString();
@@ -22,7 +28,7 @@ const createTweetElement = function(tweet) {
         </div> 
       </header>
       <div class="tweet-content">
-        <p>${content}</p>
+        <p>${safeContent}</p>
       </div>
       <footer>
         <div>
@@ -48,7 +54,15 @@ const renderTweets = function(tweets) {
   }
 }
 
+const loadTweets = () => {
+  $.getJSON('/tweets')
+    .then((res) => {
+      renderTweets(res);
+    })
+}
+
 $(document).ready(() => {
+  loadTweets();
   // Fixed Nav
   // When the user scrolls the page, execute myFunction
   window.onscroll = function() {myFunction()};
@@ -65,32 +79,32 @@ $(document).ready(() => {
     }
   }
 
-  const loadTweets = () => {
-    $.getJSON('/tweets')
-      .then((res) => {
-        renderTweets(res);
-      })
-  }
-
   const $form = $('#tweet-form');
   
   // Form Submission using Jquery
   $form.on('submit', function() {
     event.preventDefault();
-    //data validation
     const $input = $form.children('#tweet-text').val();
-     // CHeck if text is null or empty or over 140 char
-     // If so, send an alert to the user that it is empty or null
-    // Do not run the code to post the tweet
-    if(!$input) {
-      return alert('Invalid input');
-    }
-    if ($input.length > 140) {
-      return alert('Please enter less than 140 characters');
-    }
-    const serialized = $form.serialize();
+    
+    if(!$input) { 
+      // return alert('Invalid input');
+      $('#error-msg').css('visibility', 'visible');
+      $('#msg').text('Invalid input!');
+      return;
+    } else if ($input.length > 140) {
+      $('#error-msg').css('visibility', 'visible');
+      $('#msg').text('Please enter less 140 characters!');
+      return;
+    } else {
+      $('#error-msg').css('visibility', 'hidden');
+      const serialized = $form.serialize();
 
-    $.post('/tweets', serialized)
-      .then(loadTweets())
+      $.post('/tweets', serialized)
+        .then((res) => {
+          const tweet = res[res.length-1];
+          loadTweets(tweet);
+        })
+    }
   })
+
 });

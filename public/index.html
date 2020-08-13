@@ -48,6 +48,10 @@
     <!-- Page-specific (main) content here -->
     <main class="container">
       <section class="new-tweet">
+        <div id="error-msg">
+          <img class="avatar" src="images/alert.png">
+          <p id="msg"></p>
+        </div>
         <h2>Compose Tweet</h2>
         <form id="tweet-form">
           <label for="tweet-text">What are you humming about?</label>
@@ -59,7 +63,8 @@
         </form>
       </section>
       <section id="tweets-container">
-        <article class="tweet">
+        
+        <!-- <article class="tweet">
           <header>
             <div class="tweet-name">
               <img class="avatar" src="./images/ghost.png">
@@ -82,7 +87,7 @@
               <img class="icon" src="./images/ghost.png">
             </div>
           </footer>
-        </article>
+        </article> -->
       </section>
     </main>
   </body>

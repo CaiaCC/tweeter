@@ -50,7 +50,7 @@ main {
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
 
-/* New tweet goes here. Includes a header, div(class: tweet-content, and footer)*/
+/* New tweet goes here. Includes a header, div(class: tweet-content), and footer*/
 .tweet {
   margin: 1em;
 	padding: .5em;
@@ -63,6 +63,7 @@ main {
 	flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
+  overflow: hidden;
 }
 
 /* hover shadow effect*/
@@ -71,7 +72,6 @@ main {
 }
 
 .tweet header {
-  /* padding: .5em; */
   height: 60px;
   width: 100%;
   display: flex;
@@ -90,7 +90,6 @@ main {
 }
 
 .hover-text {
-  /* padding: .5em; */
   visibility: hidden;
   align-self: flex-end;
   color: #226f7b9c;
@@ -102,6 +101,7 @@ main {
 
 .tweet-content {
   width: 100%;
+  height: max-content;
   color:  #1A535C;
   font-size: 18px;
   border-bottom: 2px solid #1A535C;

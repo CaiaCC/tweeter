@@ -3,8 +3,6 @@
   align-self: center;
   display: flex;
   flex-flow: column wrap;
-	align-items: stretch;
-	
 }
 
 /* Type tweet here */
@@ -36,3 +34,13 @@ button {
 	padding: .3em;
 }
 
+/* Alert */
+#error-msg {
+	visibility: hidden;
+	height: 2.5em;
+	border: 2pt solid #f69a7e;
+	color: #e56a77;
+	font-weight: 600;
+	display: flex;
+	align-content: center;
+}
