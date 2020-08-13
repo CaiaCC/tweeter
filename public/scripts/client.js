@@ -10,7 +10,7 @@ const createTweetElement = function(tweet) {
   const timeStamp = tweet.created_at;
   const date = new Date(timeStamp);
   const day = date.toLocaleDateString();
-  let $tweet = $(`
+  let $tweetTemplate = $(`
   <article class="tweet">
       <header>
         <div class="tweet-name">
@@ -37,23 +37,18 @@ const createTweetElement = function(tweet) {
     </article>
   `)
 
-  return $tweet;
+  return $tweetTemplate;
 }
 
 const renderTweets = function(tweets) {
-  // loops through tweets
   for (const tweet of tweets) {
-    // calls createTweetElement for each tweet
-    const $newTweet = createTweetElement(tweet);
-    // takes return value and appends it to the tweets container
-    $('#tweets-container').append($newTweet);
+    const $tweetBlock = createTweetElement(tweet);
+
+    $('#tweets-container').prepend($tweetBlock);
   }
 }
 
-
-
 $(document).ready(() => {
-  
   // Fixed Nav
   // When the user scrolls the page, execute myFunction
   window.onscroll = function() {myFunction()};
@@ -69,33 +64,33 @@ $(document).ready(() => {
       nav.classList.remove("sticky");
     }
   }
-  
-  
 
-  // Form Submission using Jquery
-  // const $tweetText = $('#tweet-text');
-  const $form = $('#tweet-form');
-
-  $form.submit(event => {
-    event.preventDefault();
-    const serialized = $form.serialize();
-
-    $.post('/tweets', serialized)
-      .then((tweetText) => {
-        console.log(tweetText);
-      });
-  })
- 
-  // const loadTweets = (res) => {
-  //     renderTweets(res);
-  //   })
   const loadTweets = () => {
     $.getJSON('/tweets')
       .then((res) => {
         renderTweets(res);
       })
   }
+
+  const $form = $('#tweet-form');
   
-  loadTweets();
-  
+  // Form Submission using Jquery
+  $form.on('submit', function() {
+    event.preventDefault();
+    //data validation
+    const $input = $form.children('#tweet-text').val();
+     // CHeck if text is null or empty or over 140 char
+     // If so, send an alert to the user that it is empty or null
+    // Do not run the code to post the tweet
+    if(!$input) {
+      return alert('Invalid input');
+    }
+    if ($input.length > 140) {
+      return alert('Please enter less than 140 characters');
+    }
+    const serialized = $form.serialize();
+
+    $.post('/tweets', serialized)
+      .then(loadTweets())
+  })
 });
