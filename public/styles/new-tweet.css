@@ -2,12 +2,12 @@
   width: 100%;
   align-self: center;
   display: flex;
-  flex-flow: column wrap;
+	flex-flow: column wrap;
+	justify-content: space-evenly;
 }
 
 /* Type tweet here */
 .new-tweet textarea {
-	margin-top: 5px;
 	height: 60px;
 	width: 100%;
 	background-color: #f4f1ec;

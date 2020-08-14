@@ -1,14 +1,21 @@
 .top-header {
-	height: 400px;
   width: 100%;
 	background-color:#F6B379;
 	background-image: url("https://www.transparenttextures.com/patterns/pineapple-cut.png");
 	color: #FFFFFF;
-  /* font-size: 24px; */
-	/* padding: 1.5em; */
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	align-content: center;
-	align-items: center;
+	align-items: center; 
+	align-content: space-around;
+}
+#head-shot {
+	height: 10em;
+}
+
+@media only screen and (min-width: 769px) {
+  .top-header{
+		width: 40%;
+		order: 0;
+	}
 }

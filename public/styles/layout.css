@@ -15,40 +15,50 @@ html {
  */
 
 body {
+  width: 100%;
   color: #545149;
   background-color: #f4f1ec;
   font-size: 24px;
   font-family: 'Source Sans Pro', sans-serif;
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
 }
 
 main {
-  margin: 1.5em;
+  /* margin: 1em; */
+  padding: 5vw; 
   height: 400px;
-  width: 90%;
+  width: 100%;
   font-size: 24px;
 	background-color: #f4f1ec;
   color: #1A535C;
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* justify-content: space-around; */
+  align-content: flex-start;
+}
+/*
+ * Additional CSS can be defined below or in other CSS files, as per instructions
+ */
+ /* Responsice Container */
+#responsive-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 #tweets-container {
-  margin: 1em;
-	padding: .5em;
+  margin: 1.5em;
+	padding: .5vw;
 	width: 100%;
 	background-color: #f4f1ec;
 	display: flex;
 	flex-direction: column;
   align-items: center;
 }
-/*
- * Additional CSS can be defined below or in other CSS files, as per instructions
- */
 
 /* New tweet goes here. Includes a header, div(class: tweet-content), and footer*/
 .tweet {
@@ -122,4 +132,22 @@ main {
 
 .icon {
   width: .8em;
+}
+
+
+
+@media only screen and (min-width: 769px) {
+  #responsive-container {
+    width: 95%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    align-content: center;
+  }
+  main {
+    width: 50%;
+    order: 1;
+    padding: 2vw;
+  }
 }

@@ -24,71 +24,73 @@
 
   <body>
     <!-- Top nav bar (fixed) -->
-    <nav class="nav" id="fixed-nav">
+    <nav id="fixed-nav">
       <div>
         <span>Caia's Tweeter</span>
       </div>
       <div>
         <p>
           <b>Write</b> a new tweet
-          <img class="img" src="images/down-arrow.png" width=20 px>
+          <img class="icon" src="images/down-arrow.png">
         </p>
       </div>  
     </nav>
-    <!--Header -->
-    <header class="top-header" >
-      <div>
-          <img src="/images/profile-hex.png"> 
-      </div>
-      <!-- <br> -->
-      <div>
-          <h2>Caia Chuang</h2>
-      </div>
-  </header>
-    <!-- Page-specific (main) content here -->
-    <main class="container">
-      <section class="new-tweet">
-        <div id="error-msg">
-          <img class="avatar" src="images/alert.png">
-          <p id="msg"></p>
+    <section id="responsive-container">
+      <!--Header -->
+      <header class="top-header" >
+        <div>
+          <img id="head-shot" src="/images/profile-hex.png"> 
         </div>
-        <h2>Compose Tweet</h2>
-        <form id="tweet-form">
-          <label for="tweet-text">What are you humming about?</label>
-          <textarea id="tweet-text" name="text" placeholder="Type your tweet here"></textarea>
-          <div class="button-output">
-            <button type="submit">Tweet</button>
-            <output name="counter" class="counter" for="tweet-text">0</output>
+        <!-- <br> -->
+        <div>
+          <h2>Caia Chuang</h2>
+        </div>
+      </header>
+      <!-- Page-specific (main) content here -->
+      <main class="container">
+        <section class="new-tweet">
+          <div id="error-msg">
+            <img class="avatar" src="images/alert.png">
+            <p id="msg"></p>
           </div>
-        </form>
-      </section>
-      <section id="tweets-container">
-        
-        <!-- <article class="tweet">
-          <header>
-            <div class="tweet-name">
-              <img class="avatar" src="./images/ghost.png">
-              <p>name</p> 
+          <form id="tweet-form">
+            <label for="tweet-text">What are you humming about?</label>
+            <textarea id="tweet-text" name="text" placeholder="Type your tweet here"></textarea>
+            <div class="button-output">
+              <button type="submit">Tweet</button>
+              <output name="counter" class="counter" for="tweet-text">0</output>
             </div>
-            <div class="hover-text">
-              <p>@hover</p>
-            </div> 
-          </header>
-          <div class="tweet-content">
-            <p>Tweet goes here...</p>
-          </div>
-          <footer>
-            <div>
-              <p>10 days ago</p>
+          </form>
+        </section>
+        <section id="tweets-container">
+          
+          <!-- <article class="tweet">
+            <header>
+              <div class="tweet-name">
+                <img class="avatar" src="./images/ghost.png">
+                <p>name</p> 
+              </div>
+              <div class="hover-text">
+                <p>@hover</p>
+              </div> 
+            </header>
+            <div class="tweet-content">
+              <p>Tweet goes here...</p>
             </div>
-            <div>
-              <img class="icon" src="./images/ghost.png">
-              <img class="icon" src="./images/ghost.png">
-              <img class="icon" src="./images/ghost.png">
-            </div>
-          </footer>
-        </article> -->
-      </section>
-    </main>
+            <footer>
+              <div>
+                <p>10 days ago</p>
+              </div>
+              <div>
+                <img class="icon" src="./images/ghost.png">
+                <img class="icon" src="./images/ghost.png">
+                <img class="icon" src="./images/ghost.png">
+              </div>
+            </footer>
+          </article> -->
+
+        </section>
+      </main>
+    </section>
   </body>
 </html>
