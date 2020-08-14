@@ -1,17 +1,18 @@
 nav {
-	height: 6vh;
+  height: 6vh;
   width: 100%;
-	background-color: #4ecdc4;
-	color: #1A535C;
-	padding: 1.5em;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
+  background-color:#F6B379;
+	background-image: url("https://www.transparenttextures.com/patterns/pineapple-cut.png");
+  color: #ffffff;
+  padding: 1.5em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 /* TWEETER logo */
 nav span {
-	font-family: 'Bungee', cursive;
+  font-family: 'Bungee', cursive;
 }
 
 /* The sticky class is added to the header with JS when it reaches its scroll position */
@@ -24,5 +25,13 @@ nav span {
 /* Add some top padding to the page content to prevent sudden quick movement (as the header gets a new position at the top of the page (position:fixed and top:0) */
 .sticky + .content {
   padding-top: 102px;
+}
+
+@media only screen and (min-width: 769px) {
+  nav {
+    background-color: #4ecdc4;
+    background-image: none;
+    color: #1A535C;
+  }
 }
 
