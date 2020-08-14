@@ -13,7 +13,6 @@ html {
 /*
  * Global layout stuff
  */
-
 body {
   width: 100%;
   color: #545149;
@@ -27,7 +26,6 @@ body {
 }
 
 main {
-  /* margin: 1em; */
   padding: 5vw; 
   height: 400px;
   width: 100%;
@@ -39,10 +37,20 @@ main {
   align-items: center;
   align-content: flex-start;
 }
+
+/* image sizes */
+.avatar {
+  width: 2em;
+}
+
+.icon {
+  width: .8em;
+}
+
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
- /* Responsice Container */
+
 #responsive-container {
   width: 100%;
   display: flex;
@@ -50,6 +58,7 @@ main {
   align-items: center;
 }
 
+/* Tweet history goes here*/
 #tweets-container {
   margin: 1.5em;
 	padding: .5vw;
@@ -60,7 +69,7 @@ main {
   align-items: center;
 }
 
-/* New tweet goes here. Includes a header, div(class: tweet-content), and footer*/
+/* Tweet template. Contains a header, div as body(class: tweet-content), and footer*/
 .tweet {
   margin: 1em;
 	padding: .5em;
@@ -74,11 +83,6 @@ main {
   justify-content: space-between;
   align-items: flex-start;
   overflow: hidden;
-}
-
-/* hover shadow effect*/
-.tweet:hover {
-	box-shadow: 3px 3px 3px rgb(80, 120, 121);
 }
 
 .tweet header {
@@ -99,16 +103,6 @@ main {
   align-self: flex-start;
 }
 
-.hover-text {
-  visibility: hidden;
-  align-self: flex-end;
-  color: #226f7b9c;
-}
-
-.tweet:hover .hover-text {
-	visibility: visible;
-}
-
 .tweet-content {
   width: 100%;
   height: max-content;
@@ -118,7 +112,6 @@ main {
 }
 
 #tweets-container footer {
-  /* padding: .5em; */
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -126,12 +119,19 @@ main {
   font-size: 14px;
 }
 
-.avatar {
-  width: 2em;
+/* Hover effect*/
+.tweet:hover {
+	box-shadow: 3px 3px 3px rgb(80, 120, 121);
 }
 
-.icon {
-  width: .8em;
+.hover-text {
+  visibility: hidden;
+  align-self: flex-end;
+  color: #226f7b9c;
+}
+
+.tweet:hover .hover-text {
+	visibility: visible;
 }
 
 @media only screen and (min-width: 769px) {

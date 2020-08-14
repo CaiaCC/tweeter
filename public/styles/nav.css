@@ -15,6 +15,11 @@ nav span {
   font-family: 'Bungee', cursive;
 }
 
+nav div {
+  display: flex;
+  align-items: center;
+}
+
 /* The sticky class is added to the header with JS when it reaches its scroll position */
 .sticky {
   position: fixed;
@@ -27,6 +32,7 @@ nav span {
   padding-top: 102px;
 }
 
+/* Responsive design */
 @media only screen and (min-width: 769px) {
   nav {
     background-color: #4ecdc4;

@@ -1,40 +1,12 @@
-.new-tweet {
+/* Generate tweets here. includes a error msg container and tweet form*/
+#generate-tweet {
   width: 100%;
   align-self: center;
   display: flex;
-	flex-flow: column wrap;
+	flex-direction: column;
 	justify-content: space-evenly;
 }
 
-/* Type tweet here */
-.new-tweet textarea {
-	height: 60px;
-	width: 100%;
-	background-color: #f4f1ec;
-	font-size: 18px;
-	border: 0;
-	border-bottom: 2pt solid #1A535C;
-}
-
-/* container of button and the char output */
-.button-output {
-	display: flex;
-	/* flex-direction: row; -->it is default */
-	justify-content: space-between;
-	font-family: 'Bungee', cursive;
-	font-size: 16px;
-	padding-top: .5em;
-}
-
-/* button design */
-button {
-	background-color: #07a99e;
-	border: 0px;
-	color: #FFFFFF;
-	padding: .3em;
-}
-
-/* Alert */
 #error-msg {
 	visibility: hidden;
 	height: 2.5em;
@@ -43,4 +15,29 @@ button {
 	font-weight: 600;
 	display: flex;
 	align-content: center;
+}
+
+/* Tweet form. Contains label, textarea and footer.*/
+#tweet-text {
+	margin-top: .5em;
+	width: 100%;
+	background-color: #f4f1ec;
+	font-size: .7em;
+	border: 0;
+	border-bottom: 2pt solid #1A535C;
+}
+
+.form-footer {
+	display: flex;
+	justify-content: space-between;
+	font-family: 'Bungee', cursive;
+	font-size: 16px;
+	padding-top: .5em;
+}
+
+.form-footer button {
+	background-color: #07a99e;
+	border: 0px;
+	color: #FFFFFF;
+	padding: .3em;
 }
