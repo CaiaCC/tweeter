@@ -6,9 +6,8 @@ This repository is the starter code for the project: Students will fork and clon
 
 ## Final Product
 
-!["Screenshot of URLs page"]()
-!["Screenshot of urls:new page"]()
-!["Screenshot of urls:shortURL page"]()
+!["Screenshot of Tweeter01"](https://github.com/CaiaCC/tweeter/blob/master/doc/tweeter-page01.png?raw=true)
+!["Screenshot of Tweeter02"](https://github.com/CaiaCC/tweeter/blob/master/doc/tweeter-page02.png?raw=true)
 
 ## Getting Started
 
